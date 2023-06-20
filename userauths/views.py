@@ -49,3 +49,7 @@ def LoginView(request):
 
     return render(request,'userauths/sign-in.html')
 
+def LogoutView(request):
+    logout(request)
+    messages.success(request,"You have been logged out")
+    return redirect("userauths:sign-in")
